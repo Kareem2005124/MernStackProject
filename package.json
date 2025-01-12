@@ -4,5 +4,24 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1"
-  }
+  },
+  "name": "mern-task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kareem2005124/MernStackProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kareem2005124/MernStackProject/issues"
+  },
+  "homepage": "https://github.com/Kareem2005124/MernStackProject#readme"
 }
