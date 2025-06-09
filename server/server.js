@@ -30,7 +30,8 @@ mongoose
   });
 
 // Start the server
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-  console.log("MONGODB_URI is:", process.env.MONGODB_URI);
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
