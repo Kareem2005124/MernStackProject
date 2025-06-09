@@ -1,12 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 const cors = require("cors");
 const taskRoutes = require("./routes/taskRoutes");
 const userRoutes = require("./routes/authRoutes");
 const authMiddleware = require("./middleware/authMiddleware");
-
-dotenv.config();
 
 const app = express();
 
@@ -34,4 +32,5 @@ mongoose
 // Start the server
 app.listen(5000, () => {
   console.log("Server running on port 5000");
+  console.log("MONGODB_URI is:", process.env.MONGODB_URI);
 });
