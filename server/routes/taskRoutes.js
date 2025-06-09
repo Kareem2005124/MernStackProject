@@ -1,13 +1,22 @@
 const express = require("express");
-const router = express.Router();
-const taskController = require("../controllers/taskController");
-const protect = require("../middleware/authMiddleware"); // Import the protect middleware
+const {
+  createTask,
+  getTasks,
+  getTaskById,
+  updateTask,
+  deleteTask,
+} = require("../controllers/taskController");
+const protect = require("../middleware/authMiddleware");
 
-// Protect the routes that require authentication
-router.post("/", protect, taskController.createTask); // Apply middleware here
-router.get("/", protect, taskController.getTasks); // Apply middleware here
-router.get("/:id", protect, taskController.getTaskById);
-router.put("/:id", protect, taskController.updateTask);
-router.delete("/:id", protect, taskController.deleteTask);
+const router = express.Router();
+
+// Protect all task routes
+router.use(protect);
+
+router.post("/", createTask);
+router.get("/", getTasks);
+router.get("/:id", getTaskById);
+router.put("/:id", updateTask);
+router.delete("/:id", deleteTask);
 
 module.exports = router;
